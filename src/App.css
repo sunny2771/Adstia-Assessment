@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.left {
+  flex: 5;
+  width: 100%;
+  padding: 50px 0px 0px 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  flex: 2;
+  height: 50%;
+}
+
+.heading {
+  font-size: 46px;
+  opacity: 1;
+  font-weight: 900;
+  width: 56%;
+  line-height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  color: #0d0d59;
+  margin-top: 7%;
+}
+
+.left_para {
+  text-align: left;
+  font-size: 18px;
+  font-weight: 500;
+  word-spacing: 3px;
+  line-height: 21px;
+  word-wrap: break-word;
+  width: 83%;
+  margin-top: 30px;
+}
+
+.bottom {
+  flex: 2;
+  display: flex;
+  /* margin-top: -2%; */
+  margin-left: 70px;
+  height: 50%;
+}
+
+.right {
+  flex: 2;
+  padding-top: 50px;
+  /* height: 100vh; */
+  /* height: 50%; */
+  width: 100%;
+}
+
+.right_top {
+  display: flex;
+  flex: 2;
+}
+.right_bottom {
+  flex: 2;
+  display: flex;
+}
+
+.mobile_carousel {
+  display: none;
+}
+
+.work {
+  display: none;
+}
+
+/* for mobile design we can also fire media query from
+ min-width : 320px to max-width : 480px for small mobile devices.
+  and from min-width : 480px to max-width : 768px for large devices.
+  but for simplicity I have directly created from min-width : 0px to max-width : 600px 
+  */
+
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: 100vh;
+    padding: 25px;
+  }
+
+  .left {
+    padding: 20px;
+  }
+
+  .right {
+    padding-top: 20px;
+  }
+
+  .heading {
+    width: 100%;
+    font-size: 2.2rem;
+    line-height: 40px;
+  }
+
+  .left_para {
+    font-size: 1.2rem;
+    width: 100%;
+    line-height: 26px;
+    margin-top: 10px;
+  }
+
+  .bottom {
+    display: none;
+  }
+
+  .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    scroll-behavior: auto;
+    overflow-y: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x !important;
+    scrollbar-width: none;
+  }
+
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile_carousel {
+    background-color: aliceblue !important;
+    scroll-snap-align: start;
+    border-radius: 12px;
+    height: 300px !important;
+    width: 280px !important;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-right: 15px;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 1;
+    overflow: hidden;
+    background-image: none;
+    background-size: none;
+    transition: none;
+    padding: 0px 15px 10px 8px !important;
+  }
+
+  .work {
+    margin-top: 50px;
+    width: 100%;
+    height: fit-content;
+    background: #1e1e75;
+    display: inline-block;
+    color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .work > p {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 34px;
+  }
+
+  .work h1 {
+    font-size: 35px;
+    font-weight: 800;
+  }
+}
